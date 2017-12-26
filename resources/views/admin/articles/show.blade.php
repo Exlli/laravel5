@@ -8,7 +8,7 @@
     <h1 style="text-align: center; margin-top: 50px;">{{ $article->title }}</h1>
     <div id="content" style="padding: 50px;">
         <p>
-            {{ $article->body }}
+            {!! $article->body !!}
         </p>
     </div>
 @endsection

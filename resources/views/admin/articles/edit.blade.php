@@ -29,7 +29,13 @@
                                 <input type="file" id="myfile" name="myfile" />
                             </div>
                             <br>
-                            <textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
+                            <textarea name="body" id="body-text" style="display: none;" class="form-control" required="required">
+                                {{ $article->body }}
+                            </textarea>
+                            <div id="editor">
+                                <p>{!! $article->body !!}</p>
+                            </div>
+
                             <br>
                             <button class="btn btn-lg btn-info">编辑 Page</button>
                         </form>

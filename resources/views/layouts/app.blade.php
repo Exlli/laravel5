@@ -19,6 +19,9 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+
+    <script type="text/javascript" src="/js/wangEditor.min.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -28,5 +31,17 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor;
+        var editor = new E('#editor');
+        var $bodyText = $('#body-text');
+        //var editor = new E(document.getElementById('editor'));
+        editor.customConfig.onchange = function (html) {
+            // 监控变化，同步更新到 textarea
+            $bodyText.val(html)
+        }
+        editor.create();
+    </script>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 </body>
 </html>
