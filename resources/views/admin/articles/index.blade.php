@@ -9,7 +9,7 @@
 
                     <div class="panel-body articles">
 
-                        <a href="{{ URL('admin/articles/create') }}" class="btn btn-lg btn-primary">新增</a>
+                        <a href="{{ route('web:articles.create') }}" class="btn btn-lg btn-primary">新增</a>
 
                         <table class="table table-striped">
                             <tr>
@@ -36,6 +36,10 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            {{-- 分页 --}}
+            <div class="pull-right ">
+                {{ $articles->render() }}
             </div>
         </div>
     </div>

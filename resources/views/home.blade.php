@@ -22,4 +22,7 @@
             @endforeach
         </ul>
     </div>
+    <div class="pull-right ">
+        {{ $pages->render() }}
+    </div>
 @endsection

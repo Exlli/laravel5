@@ -34,5 +34,8 @@
                 </div>
             </div>
         </div>
+        <div class="pull-right ">
+            {{ $pages->render() }}
+        </div>
     </div>
 @endsection

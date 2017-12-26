@@ -11,6 +11,7 @@ class AdminHomeController extends Controller
     //
     public function index()
     {
-        return view('admin/AdminHome')->withPages(Page::all());
+        $pages = Page::paginate(7);
+        return view('admin/AdminHome',['pages'=>$pages]);
     }
 }

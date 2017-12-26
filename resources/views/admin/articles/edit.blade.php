@@ -20,15 +20,20 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('web:articles.update',$article->id) }}" method="POST">
+                        <form action="{{ route('web:articles.update',$article->id) }}" method="POST" enctype="multipart/form-data">
                             <input name="_method" type="hidden" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" name="title" class="form-control" required="required" value="{{ $article->title }}">
+                            <br>
+                            <div class="uploadfile">
+                                <input type="file" id="myfile" name="myfile" />
+                            </div>
                             <br>
                             <textarea name="body" rows="10" class="form-control" required="required">{{ $article->body }}</textarea>
                             <br>
                             <button class="btn btn-lg btn-info">编辑 Page</button>
                         </form>
+
 
                     </div>
                 </div>

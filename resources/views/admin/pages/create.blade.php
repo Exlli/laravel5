@@ -20,7 +20,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ URL('admin/pages') }}" method="POST">
+                        <form action="{{ route('web:pages.create') }}" method="POST">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" name="title" class="form-control" required="required">
                             <br>

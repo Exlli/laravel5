@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->withPages(Page::all());
+        $pages = Page::paginate(7);
+        return view('home',['pages'=>$pages]);
     }
 }

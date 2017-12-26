@@ -59,10 +59,7 @@ Route::group(
                 Route::get('/', 'AdminHomeController@index');
                 Route::resource('pages', 'PagesController');
                 Route::resource('comments', 'CommentsController');
-                Route::resource('articles',
-                    'ArticlesController',
-                    ['only'=>['index', 'show', 'create', 'edit', 'update']]
-                );
+                Route::resource('articles', 'ArticlesController');
             }
         );
 
@@ -74,3 +71,6 @@ Route::get('/admin/pages/{id}', 'Admin\PagesController@show');
 
 
 Route::post('comment/store', 'CommentsController@store');
+//Route::any('admin/articles', 'ArticlesController@upload');
+
+Route::post('upload', 'UserController@upload');
